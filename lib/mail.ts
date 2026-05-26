@@ -12,7 +12,7 @@ const smtpConfig = {
   },
 };
 
-const fromAddress = process.env.SMTP_FROM || "noreply@securegate.local";
+const fromAddress = `SecureGate <${process.env.SMTP_FROM || "noreply@securegate.local"}>`;
 
 const isSmtpConfigured = () => {
   return !!(smtpConfig.host && smtpConfig.auth.user && smtpConfig.auth.pass);
